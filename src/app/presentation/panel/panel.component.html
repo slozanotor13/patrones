@@ -1,0 +1,11 @@
+<div class="panel-container">
+  <h2 class="panel-title">Bienvenido, usuario ID {{ userId }}</h2>
+  <h3 class="section-title">Posts:</h3>
+
+  <div class="post-grid">
+    <div class="post-card" *ngFor="let post of posts">
+      <h4 class="post-title">{{ post.title }}</h4>
+      <p class="post-body">{{ post.body }}</p>
+    </div>
+  </div>
+</div>

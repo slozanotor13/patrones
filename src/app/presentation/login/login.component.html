@@ -1,0 +1,44 @@
+<div class="form-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h3 class="form-title">Verificar Email</h3>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="ejemplo@correo.com"
+        [class.invalid]="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+      />
+      <div class="error-message" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+        <div *ngIf="loginForm.get('email')?.hasError('required')">
+          El correo es obligatorio.
+        </div>
+        <div *ngIf="loginForm.get('email')?.hasError('email')">
+          Formato de correo inválido.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Verificar</button>
+  </form>
+
+  <div *ngIf="emailExistsResult !== null"
+       class="alert"
+       [class.success]="emailExistsResult"
+       [class.error]="emailExistsResult === false">
+    {{ emailExistsResult ? '✅ El correo existe' : '❌ El correo NO existe' }}
+  </div>
+</div>
+
+<div *ngIf="photos.length > 0" class="photo-gallery">
+  <h4>Imágenes del usuario</h4>
+  <div class="photo-grid">
+    <div class="photo-card" *ngFor="let photo of photos">
+      <img [src]="photo.thumbnailUrl" [alt]="photo.title">
+      <p>{{ photo.title }}</p>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,50 @@
+.panel-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.panel-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.post-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-left: 5px solid #007BFF; /* estilo tipo bloc */
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+}
+
+.post-title {
+  font-size: 18px;
+  margin: 0 0 8px;
+  color: #007BFF;
+}
+
+.post-body {
+  margin: 0;
+  color: #555;
+  line-height: 1.4;
+}
